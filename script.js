@@ -47,7 +47,9 @@ function getWeatherData(city) {
       fetch(weatherApiUrl)
         .then((weatherResponse) => weatherResponse.json())
         .then((data) => {
-          displayWeatherData(data);
+          console.log(data); // Add this line to inspect the data structure
+          displayCurrentWeather(data);
+          displayForecast(data);
           updateSearchHistory(city);
         })
         .catch((error) => console.error("Error fetching data:", error));
@@ -95,19 +97,21 @@ function displayForecast(forecastData) {
 
   forecastDiv.innerHTML = "<h2>5-Day Forecast</h2>";
 
-  forecastData.forEach((item) => {
+  const forecastList = forecastData.list || []; // Ensure forecastList is an array
+
+  forecastList.forEach((item) => {
     const date = new Date(item.dt * 1000);
     const icon = item.weather[0].icon;
     const temperature = item.main.temp;
     const humidity = item.main.humidity;
 
     forecastDiv.innerHTML += `
-      <div class="forecast-item">
-        <p>Date: ${date.toLocaleDateString()}</p>
-        <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
-        <p>Temperature: ${temperature}°C</p>
-        <p>Humidity: ${humidity}%</p>
-      </div>
-    `;
+        <div class="forecast-item">
+          <p>Date: ${date.toLocaleDateString()}</p>
+          <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+          <p>Temperature: ${temperature}°C</p>
+          <p>Humidity: ${humidity}%</p>
+        </div>
+      `;
   });
 }
