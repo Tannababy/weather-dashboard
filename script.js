@@ -69,7 +69,7 @@ function displayWeatherData(data) {
 function displayCurrentWeather(data) {
   const currentWeatherDiv = document.getElementById("currentWeather");
 
-  if (data.list && data.list.length > 0) {
+  if (data && data.list && data.list.length > 0) {
     const city = data.city.name;
     const date = new Date(data.list[0].dt * 1000); // Convert timestamp to date
     const icon = data.list[0].weather[0].icon;
@@ -78,13 +78,13 @@ function displayCurrentWeather(data) {
     const windSpeed = data.list[0].wind.speed;
 
     currentWeatherDiv.innerHTML = `
-        <h2>${city}</h2>
-        <p>Date: ${date.toLocaleDateString()}</p>
-        <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
-        <p>Temperature: ${temperature}°C</p>
-        <p>Humidity: ${humidity}%</p>
-        <p>Wind Speed: ${windSpeed} m/s</p>
-      `;
+          <h2>${city}</h2>
+          <p>Date: ${date.toLocaleDateString()}</p>
+          <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+          <p>Temperature: ${temperature}°C</p>
+          <p>Humidity: ${humidity}%</p>
+          <p>Wind Speed: ${windSpeed} m/s</p>
+        `;
   } else {
     currentWeatherDiv.innerHTML = "<p>No weather data available</p>";
   }
