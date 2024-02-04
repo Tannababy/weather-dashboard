@@ -11,7 +11,7 @@ let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 function updateSearchHistory(city) {
   if (!searchHistory.includes(city)) {
     searchHistory.push(city);
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    localStorage.setItem("searchHistoryDiv", JSON.stringify(searchHistoryDiv));
     renderSearchHistory();
   }
 }
@@ -47,8 +47,7 @@ function getWeatherData(city) {
       fetch(weatherApiUrl)
         .then((weatherResponse) => weatherResponse.json())
         .then((data) => {
-          displayCurrentWeather(data);
-          displayForecast(data);
+          displayWeatherData(data);
           updateSearchHistory(city);
         })
         .catch((error) => console.error("Error fetching data:", error));
