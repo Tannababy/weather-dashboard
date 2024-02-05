@@ -117,33 +117,26 @@ function displayWeatherData(data) {
 // }
 
 function displayCurrentWeather(data) {
-  console.log("Current weather Data:", data);
   const currentWeatherDiv = document.getElementById("currentWeather");
+  currentWeatherDiv.classList.add("currentWeatherStyle");
 
   if (data && data.city) {
     const city = data.city.name;
-    console.log("City:", city);
-
     const date = new Date(data.city.sunset * 1000); // Use sys.sunset for date
-    console.log("Date:", date);
-
     const icon = data.list[0].weather[0].icon; // Access the first element of the weather array
-    console.log("Icon:", icon);
 
-    const temperature = data.list[0].main.temp;
-    console.log("Temperature:", temperature);
+    //Convert temperature from Kelvin to Celcius
+    const temperatureKelvin = data.list[0].main.temp;
+    const temperatureCelsius = (temperatureKelvin - 273.15).toFixed(2);
 
     const humidity = data.list[0].main.humidity;
-    console.log("Humidity:", humidity);
-
     const windSpeed = data.list[0].wind.speed;
-    console.log("Wind Speed:", windSpeed);
 
     currentWeatherDiv.innerHTML = `
             <h2>${city}</h2>
-            <p>Date: ${date.toLocaleDateString()}</p>
+            <p>${date.toLocaleDateString()}</p>
             <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
-            <p>Temperature: ${temperature}°C</p>
+            <p>Temperature: ${temperatureCelsius}°C</p>
             <p>Humidity: ${humidity}%</p>
             <p>Wind Speed: ${windSpeed} m/s</p>
           `;
@@ -151,54 +144,6 @@ function displayCurrentWeather(data) {
     currentWeatherDiv.innerHTML = "<p>No weather data available</p>";
   }
 }
-
-// function displayForecast(forecastData) {
-//   console.log("Forecast data:", forecastData);
-//   const forecastDiv = document.getElementById("forecast");
-
-//   // Clear previous forecast data
-//   forecastDiv.innerHTML = "";
-
-//   // Create and append the header
-//   const headerDiv = document.createElement("div");
-//   headerDiv.innerHTML = "<h2>5-Day Forecast</h2>";
-//   forecastDiv.appendChild(headerDiv);
-
-//   const forecastList = forecastData.list || []; // Ensure forecastList is an array
-
-// //   forecastList.forEach((item) => {
-// //     const date = new Date(item.dt * 1000);
-// //     const icon = item.weather[0].icon;
-// //     const temperature = item.main.temp;
-// //     const humidity = item.main.humidity;
-
-// forecastList.forEach((item) => {
-//     const date = new Date(item.dt * 1000);
-//     console.log("Forecast Date:", date);
-
-//     const icon = item.weather[0].icon;
-//     console.log("Forecast Icon:", icon);
-
-//     const temperature = item.main.temp;
-//     console.log("Forecast Temperature:", temperature);
-
-//     const humidity = item.main.humidity;
-//     console.log("Forecast Humidity:", humidity);
-
-//     // Create a new div for each forecast item with styling
-//     const forecastItemDiv = document.createElement("div");
-//     forecastItemDiv.classList.add("forecast-item");
-//     forecastItemDiv.innerHTML = `
-//        <p>Date: ${date.toLocaleDateString()}</p>
-//        <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
-//        <p>Temperature: ${temperature}°C</p>
-//        <p>Humidity: ${humidity}%</p>
-//      `;
-
-//     // Append the forecast item div to the forecastDiv
-//     forecastDiv.appendChild(forecastItemDiv);
-//   });
-// }
 
 function displayForecast(forecastData) {
   console.log("Forecast data:", forecastData);
@@ -231,7 +176,7 @@ function displayForecast(forecastData) {
     const forecastItemDiv = document.createElement("div");
     forecastItemDiv.classList.add("forecast-item");
     forecastItemDiv.innerHTML = `
-         <p>Date: ${date.toLocaleDateString()}</p>
+         <p>${date.toLocaleDateString()}</p>
          <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
          <p>Temperature: ${temperature}°C</p>
          <p>Humidity: ${humidity}%</p>

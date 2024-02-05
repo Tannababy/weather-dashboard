@@ -59,7 +59,12 @@ button:hover {
 }
 
 #currentWeather {
-  margin-top: 20px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.currentWeatherStyle {
+  border: 2px solid #000;
 }
 
 #forecast {
@@ -68,14 +73,14 @@ button:hover {
   justify-content: space-between;
 }
 
-
 .forecast-item {
-  flex: 0 1 calc(20% - 10px);
-  margin: 5px;
+  flex: 1 1 calc(20% - 20%);
+  margin: 10px;
   border: 1px solid #000;
   background-color: #333;
   padding: 10px;
   color: #fff;
+  text-align: center;
 }
 
 .forecast-item p {
