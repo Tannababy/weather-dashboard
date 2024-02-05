@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 20px auto;
   background-color: #fff;
   padding: 20px;
@@ -20,6 +20,16 @@ h1 {
   text-align: center;
   margin: 0;
   padding: 20px;
+}
+
+.col-lg-3 {
+  width: 25%;
+  float: left;
+}
+
+.col-lg-9 {
+  width: 75%;
+  float: left;
 }
 
 form {
@@ -48,8 +58,26 @@ button:hover {
   background-color: #0056b3;
 }
 
-#currentWeather,
-#forecast,
-#searchHistory {
+#currentWeather {
   margin-top: 20px;
+}
+
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.forecast-item {
+  flex: 0 1 calc(20% - 10px);
+  margin: 5px;
+  border: 1px solid #000;
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+}
+
+.forecast-item p {
+  margin: 5px 0;
 }
