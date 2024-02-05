@@ -10,9 +10,9 @@ To install the Weather App, follow the steps below.
 
 1. Clone the repository:
 
-  ```bash
-   git clone git@github.com:Tannababy/weather-dashboard.git
-   ```
+```bash
+ git clone git@github.com:Tannababy/weather-dashboard.git
+```
 
 2. Navigate to the project directory:
 
@@ -48,7 +48,7 @@ To use the Weather App, follow these steps:
 
 Overall guidance and provision of necessary materials for this challenge from the EdX Front-End Web Development Bootcamp instructor and teaching assistants (Oct2023 Cohort).
 
-Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+Weather data provided by [OpenWeatherMap](https://openweathermap.org/){:target="\_blank"}.
 
 ## License
 
