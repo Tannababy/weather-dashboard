@@ -6,7 +6,7 @@ In this week's challenge :star_struck:, we were given the task to build a weathe
 
 ## Deployed website
 
-
+https://tannababy.github.io/weather-dashboard/
 
 ## Installation
 
@@ -52,7 +52,7 @@ To use the Weather App, follow these steps:
 
 Overall guidance and provision of necessary materials for this challenge from the EdX Front-End Web Development Bootcamp instructor and teaching assistants (Oct2023 Cohort).
 
-Weather data provided by [OpenWeatherMap](https://openweathermap.org/){target="\_blank"}
+Weather data provided by [OpenWeatherMap](https://openweathermap.org/).
 
 ## License
 
