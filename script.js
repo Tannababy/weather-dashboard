@@ -34,11 +34,24 @@ searchForm.addEventListener("submit", function (e) {
 });
 
 function getWeatherData(city) {
+  if (!city) {
+    console.error("City is empty.");
+    return;
+  }
+
   const geocodingApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
   fetch(geocodingApiUrl)
     .then((response) => response.json())
     .then((geocodingData) => {
+      if (!geocodingData || geocodingData.cod !== 200) {
+        const errorMessage =
+          geocodingData?.message ||
+          "Unexpected error in geocoding API response";
+        console.error(`Error in geocoding API response: ${errorMessage}`);
+        return;
+      }
+
       const latitude = geocodingData.coord.lat;
       const longitude = geocodingData.coord.lon;
 
