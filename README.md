@@ -2,7 +2,7 @@
 
 ## Description
 
-In this week's challenge :star_struck:, we were given the task to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. It utilizes the OpenWeatherMap API to retrieve weather data and allow users check the current weather and 5-day forecast for a specific location.
+In this week's challenge :star_struck:, we were given the task to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. It utilizes the OpenWeatherMap API to retrieve weather data and allows users to check the current weather and 5-day forecast for a specific location.
 
 ## Installation
 
@@ -10,15 +10,15 @@ To install the Weather App, follow the steps below.
 
 1. Clone the repository:
 
-   ```bash
+  ```bash
    git clone git@github.com:Tannababy/weather-dashboard.git
    ```
 
 2. Navigate to the project directory:
 
-```bash
-cd weather-app
-```
+   ```bash
+    cd weather-app
+   ```
 
 3. Open index.html in your preferred web browser.
 
@@ -33,9 +33,9 @@ To use the Weather App, follow these steps:
 
 ## Features
 
-**Current Weather:** View the current temperature, humidity, and wind speed for a chosen city.
-**5-Day Forecast:** Get a 5-day forecast with temperature and humidity details.
-**Search History:** Keep track of your recent searches for quick access.
+- **Current Weather:** View the current temperature, humidity, and wind speed for a chosen city.
+- **5-Day Forecast:** Get a 5-day forecast with temperature and humidity details.
+- **Search History:** Keep track of your recent searches for quick access.
 
 ## Technologies Used
 
@@ -48,7 +48,7 @@ To use the Weather App, follow these steps:
 
 Overall guidance and provision of necessary materials for this challenge from the EdX Front-End Web Development Bootcamp instructor and teaching assistants (Oct2023 Cohort).
 
-Weather data provided by ![OpenWeatherMap](https://openweathermap.org/)
+Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
 
 ## License
 
