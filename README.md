@@ -4,6 +4,10 @@
 
 In this week's challenge :star_struck:, we were given the task to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. It utilizes the OpenWeatherMap API to retrieve weather data and allows users to check the current weather and 5-day forecast for a specific location.
 
+## Deployed website
+
+
+
 ## Installation
 
 To install the Weather App, follow the steps below.
@@ -48,7 +52,7 @@ To use the Weather App, follow these steps:
 
 Overall guidance and provision of necessary materials for this challenge from the EdX Front-End Web Development Bootcamp instructor and teaching assistants (Oct2023 Cohort).
 
-Weather data provided by [OpenWeatherMap](https://openweathermap.org/){:target="\_blank"}.
+Weather data provided by [OpenWeatherMap](https://openweathermap.org/){target="\_blank"}
 
 ## License
 
