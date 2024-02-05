@@ -93,7 +93,7 @@ function displayCurrentWeather(data) {
     currentWeatherDiv.innerHTML = `
             <h2>${city}</h2>
             <p>${date.toLocaleDateString()}</p>
-            <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+            <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
             <p>Temperature: ${temperatureCelsius}°C</p>
             <p>Humidity: ${humidity}%</p>
             <p>Wind: ${windSpeedKilometersPerHour} KPH</p>
@@ -104,7 +104,6 @@ function displayCurrentWeather(data) {
 }
 
 function displayForecast(forecastData) {
-  console.log("Forecast data:", forecastData);
   const forecastDiv = document.getElementById("forecast");
 
   // Clear previous forecast data
@@ -152,7 +151,7 @@ function displayForecast(forecastData) {
     forecastItemDiv.classList.add("forecast-item");
     forecastItemDiv.innerHTML = `
          <p>${date.toLocaleDateString()}</p>
-         <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
+         <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">
          <p>Temperature: ${temperatureCelsius}°C</p>
          <p>Humidity: ${humidity}%</p>
          <p>Wind: ${windSpeedKilometersPerHour} KPH</p>
